@@ -1,3 +1,2 @@
-English text:example_text.txt
-Word list text:example_wordlist.txt
-Filter text:example_filter.txt
+English text:example.txt
+Filter text:
