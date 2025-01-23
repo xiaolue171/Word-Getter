@@ -1,3 +1,4 @@
+import re
 import nltk
 import random
 from nltk.stem import WordNetLemmatizer
@@ -14,8 +15,14 @@ def extract_words(novel_file):
         for line in novel:
             tokens = word_tokenize(line)
             for token in tokens:
-                words.append(token.lower())
+                if is_valid_word(token):
+                    words.append(token.lower())
     return words
+
+def is_valid_word(word):
+    """使用正则表达式检查单词是否仅由字母或连字符构成"""
+    pattern = r'^[a-zA-Z-]+$'
+    return bool(re.match(pattern, word))
 
 def get_novel_words(novel_file):
     """将文本转化为基础单词表，移除复数形式和动词三单形式"""
