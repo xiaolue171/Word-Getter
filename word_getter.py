@@ -6,8 +6,6 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import wordnet
 from nltk import pos_tag
 
-nltk.download('wordnet', quiet=True)
-
 def extract_words(novel_file):
     """从文件中提取单词"""
     words = []
